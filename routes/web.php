@@ -32,3 +32,9 @@ Route::post('/register', [AuthController::class, 'signup'])->name('register');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 
+// forgot password
+Route::get('/forgot-password', [AuthController::class, 'forgetPasswordPage'])->name('forgot.password');
+Route::get('/reset-password', [AuthController::class, 'resetPasswordPage'])->name('password.reset');
+Route::post('/reset', [AuthController::class, 'sendResetLink'])->name('password.reset.post');
+Route::post('/reset-password', [AuthController::class, 'reset'])->name('reset');
+
